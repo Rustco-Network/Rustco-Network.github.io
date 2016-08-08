@@ -35,6 +35,37 @@ Wir suchen natürlich noch fleißig nach Verstärkung.<br>
 Wenn du uns helfen willst, <a href="https://rustico-network.github.io/bewerbungen.html">bewirb dich doch</a>!</p>
 
 <h3>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript">
+    func();
+    var seconds = 5;
+    setInterval(function(){
+        func();
+    }, seconds * 1000);
+    function func(){
+        var ip = "Rustico.no-ip.org";
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://eu.mc-api.net/v3/server/info/" + ip, true);
+        xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+                        data = JSON.parse(xhr.responseText);
+                        if (data.status) {
+                                document.getElementById("bar").innerHTML=data.players.online + "/" + data.players.max;
+                                document.getElementById("bar").style.width = Math.round(100*(data.players.online/data.players.max)) + "%";
+                        } else {
+						        document.getElementById("bar").innerHTML="Offline";
+						}
+                }
+        }
+        xhr.send();
+    }
+    </script>
+    <div class="progress progress-striped active" style="background-color: #373737;">
+    <div class="progress-bar progress-bar-default" role="progressbar" style="width: 0%;" id="bar">0/0</div>
+</div>
+</h3>
+
+<h3>
 <a id="support" class="anchor" href="#support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support:</h3>
 
 <p><a href="mailto:networkrustico@gmail.com">Technischer Support</a><br>
