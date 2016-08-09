@@ -21,7 +21,7 @@
             "hidden": true,
         };
         options = $.extend({}, defaults, options);
-        var spoilers = this.wrap(options.wrapper).before('<input type="button"/>');
+        var spoilers = this.wrap(options.wrapper).before('<input type="btn btn-success"/>');
         spoilers.prev().each(function(){
                 $.extend(this, options.buttonattributes);
                 this.value = options.hidden ? options.showtext : options.hidetext;
