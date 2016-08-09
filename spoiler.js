@@ -16,8 +16,8 @@
             "hidetext": "Verbergen",
             "show": function(obj){$(obj).slideDown();},
             "hide": function(obj){$(obj).slideUp();},
-            "wrapper": '<div class="spoiler-wrapper" />',
-            "buttonattributes": {'class="btn btn-success"'},
+            "wrapper": '<div class="btn btn-success" />',
+            "buttonattributes": {},
             "hidden": true,
         };
         options = $.extend({}, defaults, options);
