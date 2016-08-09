@@ -8,6 +8,25 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+    <title></title>
+    <script type="text/javascript" src="../jquery-1.4.2.js"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    $(document).ready(function(){
+        var zuklapptext = "Verstecken";
+        var aufklapptext = "Zeigen";
+        $(".pre-spoiler").children("input").toggle(
+            function(){
+                this.value = zuklapptext;
+                $(this).parent().children(".spoiler").first().slideDown();
+            }, function(){
+                this.value = aufklapptext;
+                $(this).parent().children(".spoiler").first().slideUp();
+            });
+        });
+    /* ]]> */
+</script>
   </head>
   <body>
     <section class="page-header">
@@ -27,6 +46,7 @@
     <th>Job</th>
     <th>Name</th>
     <th>Links</th>
+    <th>Über mich</th>
   </tr>
   <tr>
     <td><font color="#ff3333">Admin</font></td>
@@ -47,6 +67,10 @@
     <td><font color="#33cccc">Dev</font></td>
     <td><font color="#33cccc">ThexXTURBOXx</font></td>
     <td><a href="https://www.youtube.com/channel/ThexXTURBOXx"><img border="0" alt="YouTube" src="youtube.jpg" width="48" height="20"></a></td>
+    <td><div class="pre-spoiler">
+    <input name="button" type="button" value="Buttontext">
+   <div class="spoiler" style="display: none;">Einfach ein Dev ;)</div>
+</div></td>
   </tr>
   <tr>
     <td><font color="#33cccc">Dev</font></td>
