@@ -28,10 +28,10 @@
 <h3>Spieler:</h3>
     <script type="text/javascript">
     func();
-    var seconds = 5;
+    var refreshInterval = 5000;
     setInterval(function(){
         func();
-    }, seconds * 1000);
+    }, refreshInterval);
     function func(){
         var ip = "Rustico.no-ip.org";
         var xhr = new XMLHttpRequest();
