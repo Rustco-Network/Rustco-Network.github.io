@@ -40,11 +40,15 @@
                 if (xhr.readyState == 4) {
                         data = JSON.parse(xhr.responseText);
                         if (data.status) {
-                                document.getElementById("bar").innerHTML=data.players.online + "/" + data.players.max;
-                                document.getElementById("bar").style.width = 100*(data.players.online/data.players.max) + "%";
+                        	if(data.players.max == 0) {
+					document.getElementById("bar").innerHTML="Offline";
+                        	} else {
+                        		document.getElementById("bar").innerHTML=data.players.online + "/" + data.players.max;
+                                	document.getElementById("bar").style.width = 100*(data.players.online/data.players.max) + "%";
+                        	}
                         } else {
-						        document.getElementById("bar").innerHTML="Offline";
-						}
+				document.getElementById("bar").innerHTML="Offline";
+			}
                 }
         }
         xhr.send();
